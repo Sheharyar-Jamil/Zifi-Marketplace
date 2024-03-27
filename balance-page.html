@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Balance</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <a href="#">
+        <img src="img/logo.png" alt="logo" class="logo" />
+      </a>
+
+      <!-- search  -->
+      <div class="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search" />
+      </div>
+
+      <div id="navbar-toggle-button" onclick="toggleNavbar()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="#000"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+      </div>
+    </header>
+
+    <!-- nav  -->
+    <!-- NAVIGATION -->
+    <nav class="main-nav" id="toggleNav">
+      <h2 class="heading">General</h2>
+      <ul class="main-nav-list">
+        <li class="main-nav-list-item">
+          <ion-icon name="stats-chart" class="nav-icon"></ion-icon
+          ><a href="#dashboard" class="main-nav-link">Dashboard</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="wallet-outline" class="nav-icon"></ion-icon
+          ><a href="#swap" class="main-nav-link">Swap</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="bar-chart-outline" class="nav-icon"></ion-icon
+          ><a href="#marketplace" class="main-nav-link">Marketplace</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="people-outline" class="nav-icon"></ion-icon
+          ><a href="#holders" class="main-nav-link">Holders</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="hammer-outline" class="nav-icon"></ion-icon
+          ><a href="#minting" class="main-nav-link">Minting Service</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="shield-checkmark-outline" class="nav-icon"></ion-icon
+          ><a href="#governance" class="main-nav-link">Governance</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="cash-outline" class="nav-icon-balance"></ion-icon>
+          <a href="#balance" class="main-nav-link active">Balance Checker</a>
+        </li>
+      </ul>
+      <h2 class="support heading">Support</h2>
+      <ul class="main-nav-list">
+        <li class="main-nav-list-item">
+          <ion-icon name="chatbubbles-outline" class="nav-icon"></ion-icon
+          ><a href="#AI" class="main-nav-link">AI Chat</a>
+        </li>
+        <li class="main-nav-list-item">
+          <ion-icon name="aperture-outline" class="nav-icon"></ion-icon
+          ><a href="#supprt" class="main-nav-link">Support</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="main-container">
+      <div class="container-fluid">
+        <div class="row justify-content-between align-items-center">
+          <h1 class="heading">Balance Checker</h1>
+          <button
+            class="button btn-zifi-main"
+            data-toggle="modal"
+            data-target="#connectModal"
+          >
+            Connect Wallet
+          </button>
+        </div>
+
+        <!-- MODAL CONNECT -->
+        <div
+          class="modal fade"
+          id="connectModal"
+          role="dialog"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content modal-background">
+              <div class="modal-header">
+                <h1 class="modal-title">DoggyMarket Wallet</h1>
+              </div>
+              <div class="modal-body">
+                <p>
+                  DoggyMarket comes with built-in wallet, there is no need to
+                  download any browser extension. Your private keys are stored
+                  in the browser and are never sent to the server.
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button
+                  class="btn"
+                  data-toggle="modal"
+                  data-target="#createWallet"
+                >
+                  Create new wallet
+                </button>
+                <button
+                  class="btn-import"
+                  data-toggle="modal"
+                  data-target="#importWallet"
+                >
+                  Import wallet
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL CREATE WALLET -->
+        <div class="modal fade" id="createWallet">
+          <div class="modal-dialog">
+            <div class="modal-content modal-background">
+              <div class="modal-header">
+                <h2 class="modal-title">Set your wallet password</h2>
+              </div>
+
+              <div class="modal-body">
+                <div class="input-body">
+                  <input
+                    type="password"
+                    placeholder="Enter password"
+                    class="input-wallet"
+                  />
+                  <input
+                    type="password"
+                    placeholder="Confirm password"
+                    class="input-wallet"
+                  />
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <div class="btn-body">
+                  <button
+                    class="btn-wallet"
+                    data-toggle="modal"
+                    data-target="#skipWallet"
+                  >
+                    Skip
+                  </button>
+                  <button class="btn-create-wallet-fill">Set password</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL IMPORT WALLET -->
+        <div class="modal fade" id="importWallet">
+          <div class="modal-dialog">
+            <div class="modal-content modal-background">
+              <div class="modal-header">
+                <h2 class="modal-title">Import wallet</h2>
+              </div>
+
+              <div class="modal-body">
+                <div class="modal-text-body">
+                  <p class="modal-text">
+                    Before you enter your seed phrase always verify that URL
+                    address is doggy.market.
+                  </p>
+
+                  <textarea
+                    cols="20"
+                    rows="5"
+                    placeholder="Enter your secret phrase here (mnemonic or private key)"
+                    class="input-import-wallet"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="modal-footer">
+                <div class="modal-text-btns">
+                  <button class="btn-wallet" data-dismiss="modal">
+                    Go back
+                  </button>
+                  <button class="btn-create-wallet-fill">Import wallet</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL SKIP WALLET -->
+        <div class="modal fade" id="skipWallet">
+          <div class="modal-dialog">
+            <div class="modal-content modal-background">
+              <div class="modal-header">
+                <h4 class="modal-title-skip">D6ve1...dK6eW</h4>
+              </div>
+
+              <div class="modal-body">
+                <h3>0 ($0)</h3>
+                <p class="backup">
+                  Your wallet needs backup <button>Backup now</button>
+                </p>
+
+                <ul class="tabs-small">
+                  <li class="tabs-small-list">Assets</li>
+                  <li class="tabs-small-list">Listings</li>
+                </ul>
+
+                <p class="data">nothing here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="address-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Please Enter Wallet Adress" />
+            <button class="button btn-wallet-search">Search</button>
+          </div>
+        </div>
+
+        <!-- Inner Navbar -->
+        <nav class="inner-nav">
+          <div class="nav nav-tabs mt-4" id="nav-tab" role="tablist">
+            <a
+              class="nav-item nav-link active"
+              id="nav-balance-tab"
+              data-toggle="tab"
+              href="#nav-balance"
+              role="tab"
+              aria-controls="nav-balance"
+              aria-selected="true"
+              >Balance</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-transfer-tab"
+              data-toggle="tab"
+              href="#nav-transfer"
+              role="tab"
+              aria-controls="nav-transfer"
+              aria-selected="false"
+              >Transfer Inscriptions</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-nft-tab"
+              data-toggle="tab"
+              href="#nav-nft"
+              role="tab"
+              aria-controls="nav-nft"
+              aria-selected="false"
+              >NFTs</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-dogemaps-tab"
+              data-toggle="tab"
+              href="#nav-dogemaps"
+              role="tab"
+              aria-controls="nav-dogemaps"
+              aria-selected="false"
+              >DogeMaps</a
+            >
+            <a
+              class="nav-item nav-link"
+              id="nav-history-tab"
+              data-toggle="tab"
+              href="#nav-history"
+              role="tab"
+              aria-controls="nav-history"
+              aria-selected="false"
+              >History</a
+            >
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-balance"
+            role="tabpanel"
+            aria-labelledby="nav-balance-tab"
+          >
+            <!-- Balance -->
+
+            <table class="table balance-table table-striped table-dark mt-4">
+              <thead>
+                <tr>
+                  <th scope="col">Item <i class="fa-solid fa-sort"></i></th>
+                  <th scope="col">
+                    Available <i class="fa-solid fa-sort"></i>
+                  </th>
+                  <th scope="col">Transfer <i class="fa-solid fa-sort"></i></th>
+                  <th scope="col">Balance <i class="fa-solid fa-sort"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  <td class="ticker-name">
+                    <div class="d-flex align-items-center">
+                      <i class="fa-solid fa-star"></i>
+                      <img src="./img/icon.jpg" alt="ticker" />
+                      <span>ZiFi</span>
+                    </div>
+                  </td>
+                  <td>17,810</td>
+                  <td>0</td>
+                  <td>17,810</td>
+                </tr>
+
+                <!-- row 2 -->
+                <tr>
+                  <td class="ticker-name">
+                    <div class="d-flex align-items-center">
+                      <i class="fa-regular fa-star"></i>
+                      <img src="./img/icon-2.png" alt="ticker" />
+                      <span>Dogi</span>
+                    </div>
+                  </td>
+                  <td>846</td>
+                  <td>0</td>
+                  <td>846</td>
+                </tr>
+
+                <!-- row 3 -->
+                <tr>
+                  <td class="ticker-name">
+                    <div class="d-flex align-items-center">
+                      <i class="fa-regular fa-star"></i>
+                      <img src="./img/icon-2.png" alt="ticker" />
+                      <span>Lolo</span>
+                    </div>
+                  </td>
+                  <td>23,491</td>
+                  <td>0</td>
+                  <td>23,491</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-transfer"
+            role="tabpanel"
+            aria-labelledby="nav-transfer-tab"
+          >
+            <!-- Transfer Inscriptions -->
+            <table class="table balance-table table-striped table-dark mt-4">
+              <thead>
+                <tr>
+                  <th scope="col">Item <i class="fa-solid fa-sort"></i></th>
+                  <th scope="col">
+                    Available <i class="fa-solid fa-sort"></i>
+                  </th>
+                  <th scope="col">Transfer <i class="fa-solid fa-sort"></i></th>
+                  <th scope="col">Balance <i class="fa-solid fa-sort"></i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr>
+                  <td class="ticker-name">
+                    <div class="d-flex align-items-center">
+                      <i class="fa-solid fa-star"></i>
+                      <img src="./img/icon-2.png" alt="ticker" />
+                      <span>XYZ</span>
+                    </div>
+                  </td>
+                  <td>15,320</td>
+                  <td>100</td>
+                  <td>15,220</td>
+                </tr>
+
+                <!-- row 2 -->
+                <tr>
+                  <td class="ticker-name">
+                    <div class="d-flex align-items-center">
+                      <i class="fa-regular fa-star"></i>
+                      <img src="./img/icon-2.png" alt="ticker" />
+                      <span>ABC</span>
+                    </div>
+                  </td>
+                  <td>765</td>
+                  <td>50</td>
+                  <td>715</td>
+                </tr>
+
+                <!-- row 3 -->
+                <tr>
+                  <td class="ticker-name">
+                    <div class="d-flex align-items-center">
+                      <i class="fa-regular fa-star"></i>
+                      <img src="./img/icon-2.png" alt="ticker" />
+                      <span>PQR</span>
+                    </div>
+                  </td>
+                  <td>21,654</td>
+                  <td>200</td>
+                  <td>21,454</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-nft"
+            role="tabpanel"
+            aria-labelledby="nav-nft-tab"
+          >
+            <!-- NFTs -->
+            3
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-dogemaps"
+            role="tabpanel"
+            aria-labelledby="nav-dogemaps-tab"
+          >
+            <!-- DogeMaps -->
+            4
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-history"
+            role="tabpanel"
+            aria-labelledby="nav-history-tab"
+          >
+            <!-- History -->
+            5
+          </div>
+        </div>
+      </div>
+
+      <div class="join-community text-center">
+        <span class="heading d-block">Join Our Community</span>
+        <button class="button btn-zifi-main my-3">Join Telegram</button>
+        <div class="social-icons">
+          <i class="fa-brands fa-telegram"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const toggleNavbar = () => {
+        const toggleNav = document.getElementById("toggleNav");
+        toggleNav.classList.toggle("show-nav");
+
+        console.log("Workign");
+      };
+    </script>
+  </body>
+</html>
